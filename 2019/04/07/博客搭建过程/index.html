@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives | AnQing</title>
+  <title>Hexo的简介和使用 | AnQing</title>
   
   
 
@@ -47,7 +47,7 @@
 
 
   <div class="cover-wrapper">
-    <div class="cover  half">
+    <div class="cover post half">
       
         
   <h1 class="title">AnQing</h1>
@@ -220,63 +220,215 @@
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
-	
-	  <article id="archive-page" class="post article white-box">
-	    <section class="archive">
-	      
-	          <div class="archive-item archive-year mark">
-	            <h2>2019</h2>
-	            <hr>
-	          </div>
-	      
-	          <div class="archive-item archive-post mark">
-	            <a href="/2019/04/07/博客搭建过程/">
-	              <time>04-07</time>
-	              <span class="title">
-	                
-	                  Hexo的简介和使用
-	                
-	                
-	                
-									
-									
-	              </span>
-	            </a>
-	          </div>
-	      
-	          <div class="archive-item archive-post mark">
-	            <a href="/2019/04/07/Test/">
-	              <time>04-07</time>
-	              <span class="title">
-	                
-	                  测试发文
-	                
-	                
-	                
-									
-									
-	              </span>
-	            </a>
-	          </div>
-	      
-	          <div class="archive-item archive-post mark">
-	            <a href="/2019/04/07/hello-world/">
-	              <time>04-07</time>
-	              <span class="title">
-	                
-	                  Hexo的简介和使用
-	                
-	                
-	                
-									
-									
-	              </span>
-	            </a>
-	          </div>
-	      
-	    </section>
-	  </article>
-	
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/04/07/博客搭建过程/">
+        Hexo的简介和使用
+      </a>
+    </h1>
+  
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-07</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <blockquote>
+<p>在假期搭建了博客，功能还在完善，但基本可以使用</p>
+</blockquote>
+<h4 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h4><ul>
+<li>我先去<a href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14292921653194920914" target="_blank" rel="noopener">bilibili</a>学习了一下搭建博客的视频</li>
+<li>跟着视频就能做出一个成功的范例，-。-</li>
+</ul>
+<h4 id="然后："><a href="#然后：" class="headerlink" title="然后："></a>然后：</h4><ul>
+<li>想着把内容记下来，然后去找了一下相关的教程，重新做了一遍</li>
+<li>我是用window 7安装的hexo，用系统自带的cmd，先去hexo官网下载hexo安装包</li>
+<li>用淘宝镜像源<code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，不仅因为速度的原因，在后面的操作中，用npm下载失败而用cnpm下载成功</li>
+<li><code>$ cnpm install -g hexo-cli</code>安装hexo</li>
+<li>进入放置Blog的一个空白的文件夹，<code>hexo init</code>初始化博客</li>
+<li><code>hexo s</code>启动博客，打开浏览器，输入<code>http://localhost:4000</code>就可以打开你的博客了</li>
+<li>进入<code>source\_posts</code>,新建一个md文件，就是第一篇博客</li>
+<li>然后<code>hexo g</code>生成静态文件</li>
+</ul>
+<h4 id="接着："><a href="#接着：" class="headerlink" title="接着："></a>接着：</h4><ul>
+<li>新建一个 <code>github</code>的账号，新建一个和你账号名一样的仓库，以我为例<code>anqingliu.github.io</code></li>
+<li>然后下载一个插件<code>cnpm install hexo-deployer-git --save</code></li>
+<li>打开hexo文件里的<code>_config.yml</code></li>
+<li><p>写上你自己博客的地址，如果第一次上传，需要你的账号和密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:Anqingliu/Anqingliu.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用<code>hexo d</code>上送你的博客</p>
+</li>
+</ul>
+<h4 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h4><ul>
+<li>选一个你喜欢的主题，用<code>git clone https://github.com/xaoxuu/hexo-theme-material-x themes/material-x</code></li>
+<li>修改你的<code>_config.yml</code>文件为<code>theme: material-x</code></li>
+<li><code>hexo clean</code>先清除一下原有格式化</li>
+<li><code>hexo g</code>重新生成</li>
+<li><code>hexo d</code>上送到github</li>
+</ul>
+
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <hr>
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-07T22:28:42+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年4月7日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/04/07/博客搭建过程/&title=Hexo的简介和使用 | AnQing&summary=">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/04/07/Test/" rel="prev" title="测试发文">
+                                    
+                                        测试发文
+                                    
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+
+  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Hexo的简介和使用',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class="l_side">
   
@@ -320,6 +472,20 @@
           
           
             
+  <section class="widget toc-wrapper">
+    
+<header class="pure">
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <div class="wrapper"><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+  
+</header>
+
+    <div class="content pure">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先："><span class="toc-text">首先：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#然后："><span class="toc-text">然后：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接着："><span class="toc-text">接着：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后："><span class="toc-text">最后：</span></a></li></ol>
+    </div>
+  </section>
+
 
           
         
@@ -467,6 +633,18 @@
           
           
             
+  <section class="widget related_posts">
+    
+<header class="pure">
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\hello-world\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
           
         
@@ -540,14 +718,6 @@
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
