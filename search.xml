@@ -15,10 +15,14 @@
           
           <category> 2019年4月 </category>
           
-          <category> 软件 </category>
-          
       </categories>
       
+      
+        <tags>
+            
+            <tag> 软件 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -36,10 +40,14 @@
           
           <category> 2019年4月 </category>
           
-          <category> 前端 </category>
-          
       </categories>
       
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -60,6 +68,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -76,10 +90,14 @@
           
           <category> 2019年4月 </category>
           
-          <category> 前端 </category>
-          
       </categories>
       
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
       
     </entry>
     
