@@ -11,6 +11,14 @@
         <content type="html"><![CDATA[<blockquote><p>因为公司使用的是内网，所以只能用下载安装包的办法来搭建</p></blockquote><h4 id="一、需要下载的安装包"><a href="#一、需要下载的安装包" class="headerlink" title="一、需要下载的安装包"></a>一、需要下载的安装包</h4><ul><li><a href="http://subversion.apache.org/download/" target="_blank" rel="noopener">subversion-1.11.1.tar.gz</a></li><li><a href="https://www.sqlite.org/download.html" target="_blank" rel="noopener">sqlite-autoconf-3280000.tar.gz</a></li><li><a href="http://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr-1.7.0.tar.gz</a></li><li><a href="http://apr.apache.org/download.cgi" target="_blank" rel="noopener">apr-util-1.6.1.tar.gz</a></li><li><a href="https://linux.softpedia.com/get/Programming/Libraries/zlib-159.shtml" target="_blank" rel="noopener">zlib 1.2.11.tar.xz</a></li><li>当安装apr-util出错时，需要安装<a href="http://ftp.tc.edu.tw/Linux/ubuntu/pool/main/e/expat/" target="_blank" rel="noopener">expat_2.0.1.orig.tar.gz</a></li></ul><h4 id="二、解压当前包"><a href="#二、解压当前包" class="headerlink" title="二、解压当前包"></a>二、解压当前包</h4><ul><li><code>tar -tar -xzvf 需要解压的包</code></li><li>在home下新建svn文件夹</li></ul><h4 id="三、开始安装"><a href="#三、开始安装" class="headerlink" title="三、开始安装"></a>三、开始安装</h4><ul><li><p>安装apr</p><ul><li><code>cd apr-1.7.0</code></li><li><code>./configure prefix=/home/svn/apr-1.7.0</code></li><li><code>make</code></li><li><code>make install</code></li></ul></li><li><p>安装 apr-uill</p><ul><li><code>cd apr-util-1.6.1</code></li><li><code>./configure prefix=/home/svn/apr-util-1.6.1 --with-apr=/home/svn/apr-1.7.0</code></li><li><code>make</code></li><li><code>make install</code></li></ul></li><li><p>当apr-util出错时</p><ul><li><code>cd expat-2.0.1</code></li><li><code>./configure</code></li><li><code>make</code></li><li><code>make install</code></li><li>重新安装apr-util</li></ul></li><li><p>安装zlib</p><ul><li><code>cd zlib-1.2.11</code></li><li><code>./configure prefix=/home/svn/zlib-1.2.11</code></li><li><code>make</code></li><li><code>make install</code></li></ul></li><li><p>安装sqllite</p><ul><li><code>mv sqlite-autoconf-3280000 ./subversion-1.9.7/sqlite-amalgamation</code></li></ul></li><li><p>安装subversion</p><ul><li><code>cd subversion-1.11.1</code></li><li><code>./configure prefix=/home/svn/subversion-1.11.1 --with-apr=/home/svn/apr-1.7.0 --with-apr-util=/home/svn/apr-util-1.6.1 --with-zlib=/home/svn/zlib</code></li><li><code>make</code></li><li><code>make install</code></li></ul></li></ul><h4 id="四、将svn加入path，并验证安装是否成功"><a href="#四、将svn加入path，并验证安装是否成功" class="headerlink" title="四、将svn加入path，并验证安装是否成功"></a>四、将svn加入path，并验证安装是否成功</h4><ul><li><code>cd</code></li><li><code>vim .bash_profile</code></li><li><code>:i</code></li><li><code>PATH=/home/svn/subversion-1.11.1/bin:$PATH</code></li><li>保存退出</li><li><code>. .bash_profile</code></li><li>在ect/bash_profile里也加一下path</li><li><code>. profile</code></li><li>验证<ul><li><code>svnserve --version</code></li><li>出现版本号即验证成功</li></ul></li></ul><h4 id="五、配置仓库"><a href="#五、配置仓库" class="headerlink" title="五、配置仓库"></a>五、配置仓库</h4><ul><li><code>mkdir -p myproject</code></li><li><code>svnadmin create /home/svn/myproject</code></li><li>修改配置文件<ul><li><code>cd myproject/conf</code></li><li><code>vim subversion.conf</code></li><li>将以下几项前的#删除，并顶格编写<ul><li>anon-access = none # 使非授权用户无法访问</li><li>auth-access = write # 使授权用户有写权限</li><li>password-db = /opt/svndata/repos/conf/passwd  # 指明密码文件路径</li><li>authz-db = /opt/svndata/repos/conf/authz    # 访问控制文件</li><li>realm = /opt/svndata/repos   # 认证命名空间，subversion会在认证提示里显示，并且作为凭证缓存的关键字.</li><li>保存并退出</li></ul></li><li><code>vim passwd</code></li><li>输入以下内容：<ul><li>admin = admin</li><li>username2 = password2</li><li>可以添加多个，此为用户名密码对。保存并退出</li></ul></li><li><code>vim authz</code></li><li>&lt;用户组名&gt; = &lt;用户1&gt;,&lt;用户2&gt;, 其中，1个用户组可以包含1个或多个用户，用户间以逗号分隔。</li><li>别忘了<code>[/]</code>和<code>* = rw</code></li><li>保存退出</li></ul></li></ul><h4 id="六、启动服务"><a href="#六、启动服务" class="headerlink" title="六、启动服务"></a>六、启动服务</h4><ul><li><code>svnserve -d 版本库路径 --listen 端口号 -r /home/svn/myproject</code></li><li>例如<code>svnserve -d --listen-port 3690 -r /home/svn/myproject</code></li><li>启动后，可在进程中查找是否已启动svn服务<code>ps - ef|grep svn</code></li></ul><h4 id="七、开通端口，开通防火墙端口"><a href="#七、开通端口，开通防火墙端口" class="headerlink" title="七、开通端口，开通防火墙端口"></a>七、开通端口，开通防火墙端口</h4><blockquote><p>这步我没操作，不过看网上的大大有写，具体可以看<a href="https://www.jianshu.com/p/7cfdc0086b5a" target="_blank" rel="noopener">大大</a>们的</p></blockquote><h4 id="八、访问服务"><a href="#八、访问服务" class="headerlink" title="八、访问服务"></a>八、访问服务</h4><ul><li>安装<a href="https://tortoisesvn.net/" target="_blank" rel="noopener">TortoiseSVN.msi</a>,新建一个文件夹，右键，选择<code>svn</code>检测，输入<code>svn://SVN服务器的IP地址</code>,点击确定，弹出一个框，输入账号密码，账号密码是第五步设置的那几个</li><li>把你团队需要的东西放进新建的文件夹，add后commit就行了</li></ul><h4 id="九、最后感言"><a href="#九、最后感言" class="headerlink" title="九、最后感言"></a>九、最后感言</h4><blockquote><p>安装不易，且安且珍惜</p></blockquote>]]></content>
       
       
+      <categories>
+          
+          <category> 2019年4月 </category>
+          
+          <category> 软件 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -23,6 +31,14 @@
       
         <content type="html"><![CDATA[<blockquote><p>在假期搭建了博客，功能还在完善，但基本可以使用</p></blockquote><h4 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h4><ul><li>我先去<a href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14292921653194920914" target="_blank" rel="noopener">bilibili</a>学习了一下搭建博客的视频</li><li>跟着视频就能做出一个成功的范例，-。-</li></ul><h4 id="然后："><a href="#然后：" class="headerlink" title="然后："></a>然后：</h4><ul><li>想着把内容记下来，然后去找了一下相关的教程，重新做了一遍</li><li>我是用window 7安装的hexo，用系统自带的cmd，先去hexo官网下载hexo安装包</li><li>用淘宝镜像源<code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，不仅因为速度的原因，在后面的操作中，用npm下载失败而用cnpm下载成功</li><li><code>$ cnpm install -g hexo-cli</code>安装hexo</li><li>进入放置Blog的一个空白的文件夹，<code>hexo init</code>初始化博客</li><li><code>hexo s</code>启动博客，打开浏览器，输入<code>http://localhost:4000</code>就可以打开你的博客了</li><li>进入<code>source\_posts</code>,新建一个md文件，就是第一篇博客</li><li>然后<code>hexo g</code>生成静态文件</li></ul><h4 id="接着："><a href="#接着：" class="headerlink" title="接着："></a>接着：</h4><ul><li>新建一个 <code>github</code>的账号，新建一个和你账号名一样的仓库，以我为例<code>anqingliu.github.io</code></li><li>然后下载一个插件<code>cnpm install hexo-deployer-git --save</code></li><li>打开hexo文件里的<code>_config.yml</code></li><li><p>写上你自己博客的地址，如果第一次上传，需要你的账号和密码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:Anqingliu/Anqingliu.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li><li><p>用<code>hexo d</code>上送你的博客</p></li></ul><h4 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h4><ul><li>选一个你喜欢的主题，用<code>git clone https://github.com/xaoxuu/hexo-theme-material-x themes/material-x</code></li><li>修改你的<code>_config.yml</code>文件为<code>theme: material-x</code></li><li><code>hexo clean</code>先清除一下原有格式化</li><li><code>hexo g</code>重新生成</li><li><code>hexo d</code>上送到github</li></ul>]]></content>
       
+      
+      <categories>
+          
+          <category> 2019年4月 </category>
+          
+          <category> 前端 </category>
+          
+      </categories>
       
       
     </entry>
@@ -37,6 +53,12 @@
         <content type="html"><![CDATA[<h2 id="测试发文"><a href="#测试发文" class="headerlink" title="测试发文"></a>测试发文</h2><p>你好，安晴！</p>]]></content>
       
       
+      <categories>
+          
+          <category> 2019年4月 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -49,6 +71,14 @@
       
         <content type="html"><![CDATA[<blockquote><p>注：这个博客使用了hexo搭建</p></blockquote><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
+      
+      <categories>
+          
+          <category> 2019年4月 </category>
+          
+          <category> 前端 </category>
+          
+      </categories>
       
       
     </entry>
