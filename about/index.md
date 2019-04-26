@@ -1,0 +1,22 @@
+---
+layout: page
+title: 404 Not Found
+body: [article, comments]
+meta:
+  header: false
+  footer: false
+sidebar: false
+valine:
+  path: /404.html
+  placeholder: 请留言告诉我您要访问哪个页面找不到了
+---
+
+# <center>**关于我**</center>
+
+<br>
+
+<center>**一个安静的人**</center>
+<center>待完善中...</center>
+
+<br>
+<br>
