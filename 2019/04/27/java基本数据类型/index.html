@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Hexo的简介和使用 | AnQing</title>
+  <title>java基本数据类型 | AnQing</title>
   
   
 
@@ -158,8 +158,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/04/07/博客搭建过程/">
-        Hexo的简介和使用
+      <a href="/2019/04/27/java基本数据类型/">
+        java基本数据类型
       </a>
     </h1>
   
@@ -179,7 +179,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-07</p>
+    <p>2019-04-27</p>
   </a>
 </div>
 
@@ -218,41 +218,59 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <blockquote>
-<p>在假期搭建了博客，功能还在完善，但基本可以使用</p>
+          <h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><a id="more"></a>
+<ul>
+<li>int:整形,4个字节<ul>
+<li>整数直接量默认为int类型，但不能超范围，超范围则编译错误</li>
+<li>两个整数相除，结果还是整数，小数位无条件舍弃(不会四舍五入)</li>
+<li>整数运算时若超出范围会发生溢出，溢出是需要避免的</li>
+</ul>
+</li>
+<li>long:长整型，8个字节<ul>
+<li>长整型的直接量，需在数字后加L或l</li>
+<li>运算时若有可能溢出，建议在第1个数字后加L</li>
+<li>System.currentTimeMillis()用于获取自1970.1.1零时到此时此刻的毫秒数</li>
+</ul>
+</li>
+<li>double:浮点型，8个字节(精确运算场合不能用double)<ul>
+<li>浮点数直接量默认为double型，若想表示float需在数字后加F或f</li>
+<li>double和float型数据参与运算时，有可能会出现舍入误差</li>
+</ul>
+</li>
+<li>boolean:布尔型，1个字节<ul>
+<li>只能取值为true或false</li>
+</ul>
+</li>
+<li>char:字符型，2个字节<ul>
+<li>采用Unicode字符集编码，每个字符对应一个码,表现的形式是字符char，但本质上是码int(0到65535之间),<code>&#39;a&#39;=97  &#39;A&#39;=65  &#39;0&#39;=48</code></li>
+<li>字符型直接量必须放在单引号中，只能有一个</li>
+<li>特殊符号需要通过<code>\</code>来转义</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>财务ERP—————–BigDecimal</p>
 </blockquote>
-<h4 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h4><ul>
-<li>我先去<a href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14292921653194920914" target="_blank" rel="noopener">bilibili</a>学习了一下搭建博客的视频</li>
-<li>跟着视频就能做出一个成功的范例，-。-</li>
+<h4 id="基本数据类型间的转换"><a href="#基本数据类型间的转换" class="headerlink" title="基本数据类型间的转换:"></a>基本数据类型间的转换:</h4><ul>
+<li>数据类型从小到大依次为:byte-short-int(char)-long-float-double</li>
+<li>自动类型转换:小类型到大类型</li>
+<li>强制类型转换:大类型到小类型<ul>
+<li>语法: (要转换成为的数据类型)变量,强转有可能会发生溢出或精度的丢失</li>
 </ul>
-<a id="more"></a>
-<h4 id="然后："><a href="#然后：" class="headerlink" title="然后："></a>然后：</h4><ul>
-<li>想着把内容记下来，然后去找了一下相关的教程，重新做了一遍</li>
-<li>我是用window 7安装的hexo，用系统自带的cmd，先去hexo官网下载hexo安装包</li>
-<li>用淘宝镜像源<code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，不仅因为速度的原因，在后面的操作中，用npm下载失败而用cnpm下载成功</li>
-<li><code>$ cnpm install -g hexo-cli</code>安装hexo</li>
-<li>进入放置Blog的一个空白的文件夹，<code>hexo init</code>初始化博客</li>
-<li><code>hexo s</code>启动博客，打开浏览器，输入<code>http://localhost:4000</code>就可以打开你的博客了</li>
-<li>进入<code>source\_posts</code>,新建一个md文件，就是第一篇博客</li>
-<li>然后<code>hexo g</code>生成静态文件</li>
-</ul>
-<h4 id="接着："><a href="#接着：" class="headerlink" title="接着："></a>接着：</h4><ul>
-<li>新建一个 <code>github</code>的账号，新建一个和你账号名一样的仓库，以我为例<code>anqingliu.github.io</code></li>
-<li>然后下载一个插件<code>cnpm install hexo-deployer-git --save</code></li>
-<li>打开hexo文件里的<code>_config.yml</code></li>
-<li><p>写上你自己博客的地址，如果第一次上传，需要你的账号和密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:Anqingliu/Anqingliu.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>用<code>hexo d</code>上送你的博客</p>
-</li>
+<li>整数直接量可以直接赋值给byte、short、char，但不能超出范围</li>
+<li>byte、short、char型数据参与运算时，先一律转换为int再运算</li>
 </ul>
-<h4 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h4><ul>
-<li>选一个你喜欢的主题，用<code>git clone https://github.com/xaoxuu/hexo-theme-material-x themes/material-x</code></li>
-<li>修改你的<code>_config.yml</code>文件为<code>theme: material-x</code></li>
-<li><code>hexo clean</code>先清除一下原有格式化</li>
-<li><code>hexo g</code>重新生成</li>
-<li><code>hexo d</code>上送到github</li>
+<h4 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h4><ul>
+<li>只能包含字母、数字、<code>_</code>和$符，并且不能以数字开头</li>
+<li>严格区分大小写</li>
+<li>不能使用关键字</li>
+<li>可以中文命名，但不建议,建议”英文的见名知意”、”驼峰命名法”</li>
 </ul>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><blockquote>
+<p>int的最大值和最小值的变换</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int balance = 2147483647;</span><br><span class="line">balance = balance+1; //-2147483648(最小值)</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -264,7 +282,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-27T11:21:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-27T21:55:27+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2019年4月27日</p>
@@ -276,7 +294,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/前端/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>前端</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Java</p></a></div>
 
 
         
@@ -293,16 +311,16 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2019/04/21/离线服务器搭建svn并使用/" rel="prev" title="svn的搭建和使用">
+                                <a href="/2019/04/27/java猜数字游戏/" rel="prev" title="猜数字小游戏">
                                   
-                                      svn的搭建和使用
+                                      猜数字小游戏
                                   
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/软件/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>软件</a>
+                                    <a class="tag" href="/tags/游戏/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>游戏</a>
                                 </h6>
                             
                         </span>
@@ -313,16 +331,16 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/04/07/Test/" rel="prev" title="测试发文">
+                                <a href="/2019/04/27/java基础/" rel="prev" title="java基础">
                                     
-                                        测试发文
+                                        java基础
                                     
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/测试/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>测试</a>
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
                                 </h6>
                             
                         </span>
@@ -365,7 +383,7 @@
 
   <script>
     window.subData = {
-      title: 'Hexo的简介和使用',
+      title: 'java基本数据类型',
       tools: true
     }
   </script>
@@ -466,7 +484,7 @@
 </header>
 
     <div class="content pure">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\hello-world\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基础\" title="java基础" rel="bookmark">java基础</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基础\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\hello-world\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li></ul>
     </div>
   </section>
 

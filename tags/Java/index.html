@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Hexo的简介和使用 | AnQing</title>
+  <title>Tag: Java | AnQing</title>
   
   
 
@@ -46,7 +46,55 @@
   
 
 
-  <header class="l_header no_sidebar pure">
+  <div class="cover-wrapper">
+    <div class="cover  half">
+      
+        
+  <h1 class="title">AnQing</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder>
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class="menu navgation">
+  <ul class="h-list">
+    
+      
+        <li>
+          <a class="nav home" href="/" id="home">
+            <i class="fas fa-rss fa-fw"></i>&nbsp;博客
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/projects/" id="projects">
+            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
+            <i class="fas fa-link fa-fw"></i>&nbsp;链接
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/" rel="nofollow" id="about">
+            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -138,16 +186,31 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
+  </div>
 
 
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
   
-
-  
-    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list">
+    
+      
+        
+          
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
 
 
   <section class="meta">
@@ -156,13 +219,11 @@
     <div class="meta" id="header-meta">
       
         
-  
-    <h1 class="title">
-      <a href="/2019/04/07/博客搭建过程/">
-        Hexo的简介和使用
-      </a>
-    </h1>
-  
+  <h2 class="title">
+    <a href="/2019/04/27/java基本数据类型/">
+      java基本数据类型
+    </a>
+  </h2>
 
 
       
@@ -179,7 +240,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-07</p>
+    <p>2019-04-27</p>
   </a>
 </div>
 
@@ -187,19 +248,6 @@
         
           
             
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class="notlink">
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
 
           
         
@@ -216,161 +264,132 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          <blockquote>
-<p>在假期搭建了博客，功能还在完善，但基本可以使用</p>
-</blockquote>
-<h4 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h4><ul>
-<li>我先去<a href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14292921653194920914" target="_blank" rel="noopener">bilibili</a>学习了一下搭建博客的视频</li>
-<li>跟着视频就能做出一个成功的范例，-。-</li>
-</ul>
-<a id="more"></a>
-<h4 id="然后："><a href="#然后：" class="headerlink" title="然后："></a>然后：</h4><ul>
-<li>想着把内容记下来，然后去找了一下相关的教程，重新做了一遍</li>
-<li>我是用window 7安装的hexo，用系统自带的cmd，先去hexo官网下载hexo安装包</li>
-<li>用淘宝镜像源<code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，不仅因为速度的原因，在后面的操作中，用npm下载失败而用cnpm下载成功</li>
-<li><code>$ cnpm install -g hexo-cli</code>安装hexo</li>
-<li>进入放置Blog的一个空白的文件夹，<code>hexo init</code>初始化博客</li>
-<li><code>hexo s</code>启动博客，打开浏览器，输入<code>http://localhost:4000</code>就可以打开你的博客了</li>
-<li>进入<code>source\_posts</code>,新建一个md文件，就是第一篇博客</li>
-<li>然后<code>hexo g</code>生成静态文件</li>
-</ul>
-<h4 id="接着："><a href="#接着：" class="headerlink" title="接着："></a>接着：</h4><ul>
-<li>新建一个 <code>github</code>的账号，新建一个和你账号名一样的仓库，以我为例<code>anqingliu.github.io</code></li>
-<li>然后下载一个插件<code>cnpm install hexo-deployer-git --save</code></li>
-<li>打开hexo文件里的<code>_config.yml</code></li>
-<li><p>写上你自己博客的地址，如果第一次上传，需要你的账号和密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: git@github.com:Anqingliu/Anqingliu.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用<code>hexo d</code>上送你的博客</p>
-</li>
-</ul>
-<h4 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h4><ul>
-<li>选一个你喜欢的主题，用<code>git clone https://github.com/xaoxuu/hexo-theme-material-x themes/material-x</code></li>
-<li>修改你的<code>_config.yml</code>文件为<code>theme: material-x</code></li>
-<li><code>hexo clean</code>先清除一下原有格式化</li>
-<li><code>hexo g</code>重新生成</li>
-<li><code>hexo d</code>上送到github</li>
-</ul>
-
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4>
+      
+        <div class="readmore">
+          <a href="/2019/04/27/java基本数据类型/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
         </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
         
-          
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
+        
+      </div>
+    
+  </section>
+</article>
 
-
-  <section class="meta" id="footer-meta">
-    <hr>
-    <div class="new-meta-box">
+          </div>
+        
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-27T11:21:25+08:00">
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/04/27/java基础/">
+      java基础
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
   <a class="notlink">
-    <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年4月27日</p>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-27</p>
   </a>
 </div>
 
-        
-      
+          
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/前端/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>前端</p></a></div>
+            
 
-
+          
         
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
       
     </div>
   </section>
 
 
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h4 id="Java开发环境"><a href="#Java开发环境" class="headerlink" title="Java开发环境"></a>Java开发环境</h4><ul>
+<li>编译运行过程<ul>
+<li>编译期:.java源文件,经过编译,生成.class字节码文件</li>
+<li>运行期: JVM加载.class并运行.class</li>
+</ul>
+</li>
+</ul>
+      
+        <div class="readmore">
+          <a href="/2019/04/27/java基础/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
         
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
         
-            <div class="prev-next">
-                
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/2019/04/21/离线服务器搭建svn并使用/" rel="prev" title="svn的搭建和使用">
-                                  
-                                      svn的搭建和使用
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/软件/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>软件</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2019/04/07/Test/" rel="prev" title="测试发文">
-                                    
-                                        测试发文
-                                    
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/测试/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>测试</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-            </div>
-        
-      </section>
-    </article>
-  
+      </div>
+    
+  </section>
+</article>
 
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments">
-    <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-spinner fa-spin fa-fw"></i>
           </div>
-        </section>
+        
       
-    </section>
-  </article>
-
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'Hexo的简介和使用',
-      tools: true
-    }
-  </script>
-
-
+    
+  
 </div>
 <aside class="l_side">
   
@@ -458,18 +477,6 @@
           
           
             
-  <section class="widget related_posts">
-    
-<header class="pure">
-  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
-  
-</header>
-
-    <div class="content pure">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\hello-world\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基础\" title="java基础" rel="bookmark">java基础</a></h3></div></li></ul>
-    </div>
-  </section>
-
 
           
         
@@ -581,36 +588,6 @@
 
 
 
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  
-    
-      <script src="/js/volantis.js"></script>
-    
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var notify = 'false' == true;
-  var verify = 'false' == true;
-  var valine = new Valine();
-  valine.init({
-    el: '#valine_container',
-    notify: notify,
-    verify: verify,
-    guest_info: guest_info,
-    
-    appId: "ntRH7DIoBb0mJ1dyTjDPkpnM-gzGzoHsz",
-    appKey: "AztMESC4lm4tXCEldOsdizhS",
-    placeholder: "来啦，朋友~",
-    pageSize:'20',
-    avatar:'mp',
-    lang:'zh-cn',
-    highlight:'false'
-  })
-  </script>
 
 
 
