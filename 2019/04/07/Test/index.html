@@ -46,55 +46,7 @@
   
 
 
-  <div class="cover-wrapper">
-    <div class="cover post half">
-      
-        
-  <h1 class="title">AnQing</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-rss fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/projects/" id="projects">
-            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-link fa-fw"></i>&nbsp;链接
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/" rel="nofollow" id="about">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </div>
-    <header class="l_header no_sidebar pure">
+  <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -186,7 +138,6 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
   <div class="l_body">
@@ -237,19 +188,6 @@
           
             
   
-  <div class="new-meta-item category">
-    <a href="/categories/2019年4月/" rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>2019年4月</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
     <div class="new-meta-item browse busuanzi">
       <a class="notlink">
         <i class="fas fa-eye" aria-hidden="true"></i>
@@ -280,7 +218,8 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <h2 id="测试发文"><a href="#测试发文" class="headerlink" title="测试发文"></a>测试发文</h2><p>你好，安晴！</p>
+          <h2 id="测试发文"><a href="#测试发文" class="headerlink" title="测试发文"></a>测试发文</h2><a id="more"></a>
+<p>你好，安晴！</p>
 
         </div>
         
@@ -292,10 +231,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-25T22:07:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-27T11:19:35+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>last updated at Apr 25, 2019</p>
+    <p>last updated at Apr 27, 2019</p>
   </a>
 </div>
 
@@ -366,6 +305,20 @@
     <!-- 显示推荐文章和评论 -->
 
 
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Comments</h4>
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+    </section>
+  </article>
 
 
   
@@ -524,12 +477,6 @@
 
 <footer id="footer" class="clearfix">
   
-    <div class="footer">
-      <p>安晴的博客</p>
-
-    </div>
-    <br>
-  
   
   <br>
   <div><p>footer.license</p>
@@ -604,6 +551,27 @@
 
 
 
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "b260c21e8f1e9fdf1978",
+      clientSecret: "e370ff70fee0879943ab05e216eea4338de3f689",
+      repo: "git@github.com:Anqingliu/Anqingliu.github.io.git",
+      owner: "Anqingliu",
+      admin: "Anqingliu",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 
