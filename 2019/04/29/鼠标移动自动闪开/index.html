@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Hexo的简介和使用 | AnQing</title>
+  <title>鼠标移动自动闪开 | AnQing</title>
   
   
 
@@ -158,8 +158,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/04/07/hello-world/">
-        Hexo的简介和使用
+      <a href="/2019/04/29/鼠标移动自动闪开/">
+        鼠标移动自动闪开
       </a>
     </h1>
   
@@ -179,7 +179,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-07</p>
+    <p>2019-04-29</p>
   </a>
 </div>
 
@@ -218,19 +218,7 @@
 
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
-          <blockquote>
-<p>注：这个博客使用了hexo搭建</p>
-</blockquote>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;canvas id=<span class="string">"pane"</span> width=<span class="string">"1024"</span> height=<span class="string">"520"</span>&gt;&lt;/canvas&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      var no = new Image(); no.src = <span class="string">"images/no.png"</span>;</span><br><span class="line">      var canvas = document.getElementById(<span class="string">'pane'</span>);</span><br><span class="line">      var ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">      var btnN = new Btn(564,402,686,294,no);</span><br><span class="line">      setInterval(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">          btnN.paintBtn();</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      canvas.onmousemove = <span class="keyword">function</span>(evt)&#123;</span><br><span class="line">        var e = evt||event;</span><br><span class="line">        <span class="keyword">if</span>(btnN.contains(e.x+331, e.y+138))&#123;//鼠标靠近图片x331,y138的地方</span><br><span class="line">            btnN.x = Math.floor((Math.random() * 190) + 648);</span><br><span class="line">            btnN.y = Math.floor((Math.random() * 190) + 210);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> Btn(pointx,pointy,x,y,say)&#123;</span><br><span class="line">      this.x=x; this.y=y;</span><br><span class="line">      this.pointx=pointx; this.pointy=pointy;</span><br><span class="line">      this.paintBtn=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        ctx.save();//保存当前画布状态</span><br><span class="line">        ctx.translate(this.x, this.y);//函数用于在二维空间中移动一个元素。</span><br><span class="line">        var a = Math.atan((this.y- this.pointy)/(this.x - this.pointx));</span><br><span class="line">        a=a&lt;0?a+Math.PI:a;</span><br><span class="line">        ctx.rotate(a);//旋转</span><br><span class="line">        ctx.restore();//恢复最近一近的画布保存状态</span><br><span class="line">        ctx.drawImage(say,this.x-say.naturalWidth/2,this.y-say.naturalHeight/2);</span><br><span class="line">      &#125;;</span><br><span class="line">      this.contains = <span class="keyword">function</span>(ex,ey)&#123;</span><br><span class="line">        <span class="built_in">return</span> Math.sqrt(Math.pow((ex-this.x),2)+Math.pow((ey-this.y),2))&lt;50;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -242,10 +230,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-27T11:21:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-04-29T23:21:04+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年4月27日</p>
+    <p>最后更新于 2019年4月29日</p>
   </a>
 </div>
 
@@ -267,25 +255,25 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2019/04/07/Test/" rel="prev" title="测试发文">
-                                  
-                                      测试发文
-                                  
+                                <a href="/2019/04/27/java猜数字游戏/" rel="prev" title="猜数字小游戏">
+                                    
+                                        猜数字小游戏
+                                    
                                 </a>
                             </h4>
                             
                                 
                                 <h6 class="tags">
-                                    <a class="tag" href="/tags/测试/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>测试</a>
+                                    <a class="tag" href="/tags/游戏/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>游戏</a>
                                 </h6>
                             
                         </span>
                     </section>
-                
                 
             </div>
         
@@ -324,7 +312,7 @@
 
   <script>
     window.subData = {
-      title: 'Hexo的简介和使用',
+      title: '鼠标移动自动闪开',
       tools: true
     }
   </script>
@@ -425,7 +413,7 @@
 </header>
 
     <div class="content pure">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\博客搭建过程\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\29\鼠标移动自动闪开\" title="鼠标移动自动闪开" rel="bookmark">鼠标移动自动闪开</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基本数据类型\" title="java基本数据类型" rel="bookmark">java基本数据类型</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\hello-world\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\博客搭建过程\" title="Hexo的简介和使用" rel="bookmark">Hexo的简介和使用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基本数据类型\" title="java基本数据类型" rel="bookmark">java基本数据类型</a></h3></div></li></ul>
     </div>
   </section>
 
