@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>IO流</title>
+      <link href="/2019/05/01/IO%E6%B5%81/"/>
+      <url>/2019/05/01/IO%E6%B5%81/</url>
+      
+        <content type="html"><![CDATA[<h4 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h4><ol><li><p>java提供了标准的IO操作,即:输入与输出</p><a id="more"></a></li><li><p>IO的作用是可以让我们的程序与外界进行数据交换.比如从网络读写数据,读取键盘数据,读写文件数据等等.</p></li><li><p>标准的IO根据将功能按照方向划分</p><ul><li>输入:从外界到程序中的过程,这是”读”的过程</li><li>输出:从程序发送至外界的过程,这是”写”的过程</li></ul></li></ol><blockquote><p>学习IO的重点:理解流链接操作,通过应用流连接,按照需求组合高级流与低级流,完成读写操作.</p></blockquote><ol start="4"><li><p>流分为:节点流(低级流),处理流(高级流)</p><ul><li>节点流:实际链接程序与另一端的管道,负责在两端之间传送数据.注意:读写一定是建立在节点流的基础上进行的.</li><li>处理流:不能独立存在,可以链接在其他流上,处理流自带某种对数据的加工操作,所以数据流经该流会对这些数据进行处理,这样可以简化我们对数据的处理操作.</li></ul></li><li><p>java.io.InputStream</p><ul><li>所有字节输入流的父类,是一个抽象类,规定了所有字节输入流都必须具备的读取字节的方法</li></ul></li><li><p>java.io.OutputStream</p><ul><li>所有字节输出流的父类,是一个抽象类,规定了所有字节输出流都必须具备的写出字节的方法</li></ul></li><li><p>文件流</p><ul><li>文件流是一套低级流,作用是读写文件数据.</li><li>文件输出流支持的两种写模式:<ul><li>覆盖写操作,即:若写出的文件有数据,则将原有数据全部删除,将本次通过流写出的内容作为文件数据.<br><code>FileOutputStream(String path)</code>, <code>FileOutputStream(File file)</code></li><li>追加写操作,若文件有数据则全部保留,从该文件末尾追加内容<br><code>FileOutputStream(String path,boolean append)</code><br><code>FileOutputStream(File file,boolean append)</code></li></ul></li></ul></li><li><p>文件流与RandomAccessFile的对比:</p><ul><li>1:论功能是一致的,都是用来读写文件数据</li><li>2:RAF对于文件即可读也可写,但是文件流不行,文件输入流只用来读文件数据,文件输出流用来向文件中写入数据</li><li>流的特点是顺序读写操作,即:读写是不能回退的.RAF是随机读写操作,因为依靠指针位置进行读写,所以可以通过操作指针对文件任意位置随意读写.</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2019年5月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>流的注册和读取</title>
+      <link href="/2019/05/01/%E6%B5%81%E7%9A%84%E6%B3%A8%E5%86%8C%E5%92%8C%E8%AF%BB%E5%8F%96/"/>
+      <url>/2019/05/01/%E6%B5%81%E7%9A%84%E6%B3%A8%E5%86%8C%E5%92%8C%E8%AF%BB%E5%8F%96/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>完成用户注册功能</p><ul><li>用user.dat文件保存用户信息</li><li>每个用户的信息包括:用户名,密码,昵称,年龄</li><li>其中年龄是int值,其余都是字符串.</li></ul></blockquote><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public class Test1 &#123;</span><br><span class="line">public static void main(String[] args) throws IOException &#123;</span><br><span class="line">RandomAccessFile raf</span><br><span class="line">= new RandomAccessFile(<span class="string">"user.dat"</span>,<span class="string">"rw"</span>);</span><br><span class="line">//先将指针移动到文件末尾,以便追加新记录</span><br><span class="line">raf.seek(raf.length());</span><br><span class="line"></span><br><span class="line">String name = <span class="string">"测试"</span>;</span><br><span class="line">String password = <span class="string">"123456"</span>;</span><br><span class="line">String nickname = <span class="string">"测"</span>;</span><br><span class="line">int age = 18;</span><br><span class="line">/*</span><br><span class="line"> * 每条记录占用100字节,其中用户名,密码,</span><br><span class="line"> * 昵称各占32字节,int型的age占4字节.</span><br><span class="line"> * 数据<span class="string">"留白"</span>的目的是便于后期修改信息.</span><br><span class="line"> */</span><br><span class="line">//写用户名</span><br><span class="line">byte[] data = name.getBytes(<span class="string">"UTF-8"</span>);</span><br><span class="line">data = Arrays.copyOf(data, 32);</span><br><span class="line">raf.write(data);//一次写了32字节</span><br><span class="line"></span><br><span class="line">data = password.getBytes(<span class="string">"UTF-8"</span>);</span><br><span class="line">data = Arrays.copyOf(data, 32);</span><br><span class="line">raf.write(data);</span><br><span class="line"></span><br><span class="line">data = nickname.getBytes(<span class="string">"UTF-8"</span>);</span><br><span class="line">data = Arrays.copyOf(data, 32);</span><br><span class="line">raf.write(data);</span><br><span class="line"></span><br><span class="line">raf.writeInt(age);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"注册完毕!"</span>);</span><br><span class="line">raf.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>将每个用户信息输出格式:user,pwd,nick,age</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class Test2 &#123;</span><br><span class="line">public static void main(String[] args) throws IOException &#123;</span><br><span class="line">RandomAccessFile raf</span><br><span class="line">= new RandomAccessFile(<span class="string">"user.dat"</span>,<span class="string">"r"</span>);</span><br><span class="line">/*</span><br><span class="line"> * 将每个用户信息输出格式:user,<span class="built_in">pwd</span>,nick,age</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">for</span>(int i=0;i&lt;raf.length()/100;i++)&#123;</span><br><span class="line">//读用户名</span><br><span class="line">byte[] data = new byte[32];</span><br><span class="line">raf.read(data);</span><br><span class="line">String name = new String(data,<span class="string">"UTF-8"</span>).trim();</span><br><span class="line">//读密码</span><br><span class="line">raf.read(data);</span><br><span class="line">String <span class="built_in">pwd</span> = new String(data,<span class="string">"UTF-8"</span>).trim();</span><br><span class="line">//读昵称</span><br><span class="line">raf.read(data);</span><br><span class="line">String nickname = new String(data,<span class="string">"UTF-8"</span>).trim();</span><br><span class="line">//读年龄</span><br><span class="line">int age = raf.readInt();</span><br><span class="line">System.out.println(name+<span class="string">","</span>+<span class="built_in">pwd</span>+<span class="string">","</span>+nickname+<span class="string">","</span>+age);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2019年5月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>鼠标移动自动闪开</title>
       <link href="/2019/04/29/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E8%87%AA%E5%8A%A8%E9%97%AA%E5%BC%80/"/>
       <url>/2019/04/29/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E8%87%AA%E5%8A%A8%E9%97%AA%E5%BC%80/</url>
