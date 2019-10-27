@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>AnQing</title>
+  <title>springmvc和springboot的区别 | AnQing</title>
   
   
 
@@ -46,55 +46,7 @@
   
 
 
-  <div class="cover-wrapper">
-    <div class="cover list half">
-      
-        
-  <h1 class="title">AnQing</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-rss fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/projects/" id="projects">
-            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-link fa-fw"></i>&nbsp;链接
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/" rel="nofollow" id="about">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </div>
-    <header class="l_header no_sidebar pure">
+  <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -186,73 +138,217 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
   
-    <section class="post-list">
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
       
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/10/27/springmvc和springboot的区别/">
+        springmvc和springboot的区别
+      </a>
+    </h1>
+  
+
+
+      
+      <div class="new-meta-box">
         
           
         
           
-        
+            
+
           
         
           
-        
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-10-27</p>
+  </a>
+</div>
+
           
         
           
-        
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
           
         
           
-        
+            
+
           
         
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
+<p>Spring 是一个“引擎”；</p>
+</blockquote>
+<blockquote>
+<p>Spring MVC 是基于Spring的一个 MVC 框架 ；</p>
+</blockquote>
+<blockquote>
+<p>Spring Boot 是基于Spring4的条件注册的一套快速开发整合包。</p>
+</blockquote>
+<a id="more"></a>
+<h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><ul>
+<li><p>我以前学过Spring MVC,不过那些配置都是Copy过来的,反正都不知道那些配置是做什么的(忘的差不多了),还不如直接用Spring Boot(下面文章是转载来的)</p>
+</li>
+<li><p>Spring 框架就像一个家族，有众多衍生产品例如 boot、security、jpa等等。但他们的基础都是Spring 的 ioc和 aop ioc 提供了依赖注入的容器 aop ，解决了面向横切面的编程，然后在此两者的基础上实现了其他延伸产品的高级功能。Spring MVC是基于 Servlet 的一个 MVC 框架 主要解决 WEB 开发的问题，因为 Spring 的配置非常复杂，各种XML、 JavaConfig、hin处理起来比较繁琐。于是为了简化开发者的使用，从而创造性地推出了Spring boot，约定优于配置，简化了spring的配置流程。</p>
+</li>
+<li><p>说得更简便一些：Spring 最初利用“工厂模式”（DI）和“代理模式”（AOP）解耦应用组件。大家觉得挺好用，于是按照这种模式搞了一个 MVC框架（一些用Spring 解耦的组件），用开发 web 应用（ SpringMVC ）。然后有发现每次开发都写很多样板代码，为了简化工作流程，于是开发出了一些“懒人整合包”（starter），这套就是 Spring Boot。</p>
+</li>
+</ul>
+<h6 id="Spring-MVC的功能"><a href="#Spring-MVC的功能" class="headerlink" title="Spring MVC的功能"></a>Spring MVC的功能</h6><ul>
+<li>Spring MVC提供了一种轻度耦合的方式来开发web应用。</li>
+<li>Spring MVC是Spring的一个模块，式一个web框架。通过Dispatcher Servlet, ModelAndView 和 View Resolver，开发web应用变得很容易。解决的问题领域是网站应用程序或者服务开发——URL路由、Session、模板引擎、静态Web资源等等。</li>
+</ul>
+<h6 id="Spring-Boot的功能"><a href="#Spring-Boot的功能" class="headerlink" title="Spring Boot的功能"></a>Spring Boot的功能</h6><ul>
+<li>Spring Boot实现了自动配置，降低了项目搭建的复杂度。</li>
+<li><p>众所周知Spring框架需要进行大量的配置，Spring Boot引入自动配置的概念，让项目设置变得很容易。Spring Boot本身并不提供Spring框架的核心特性以及扩展功能，只是用于快速、敏捷地开发新一代基于Spring框架的应用程序。也就是说，它并不是用来替代Spring的解决方案，而是和Spring框架紧密结合用于提升Spring开发者体验的工具。同时它集成了大量常用的第三方库配置(例如Jackson, JDBC, Mongo, Redis, Mail等等)，Spring Boot应用中这些第三方库几乎可以零配置的开箱即用(out-of-the-box)，大部分的Spring Boot应用都只需要非常少量的配置代码，开发者能够更加专注于业务逻辑。</p>
+</li>
+<li><p>Spring Boot只是承载者，辅助你简化项目搭建过程的。如果承载的是WEB项目，使用Spring MVC作为MVC框架，那么工作流程和你上面描述的是完全一样的，因为这部分工作是Spring MVC做的而不是Spring Boot。</p>
+</li>
+<li><p>对使用者来说，换用Spring Boot以后，项目初始化方法变了，配置文件变了，另外就是不需要单独安装Tomcat这类容器服务器了，maven打出jar包直接跑起来就是个网站，但你最核心的业务逻辑实现与业务流程实现没有任何变化。</p>
+</li>
+<li><a href="https://www.cnblogs.com/zhonglihai/p/9109413.html" target="_blank" rel="noopener">引用</a></li>
+</ul>
+
+        </div>
+        
           
+
+
+  <section class="meta" id="footer-meta">
+    <hr>
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-27T19:30:28+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年10月27日</p>
+  </a>
+</div>
+
+        
+      
         
           
-        
-          
-        
-          
-        
-      
-      
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Java</p></a></div>
+
+
         
       
+    </div>
+  </section>
+
+
         
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/05/04/java基础2/" rel="prev" title="java基础">
+                                    
+                                        java基础
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
-        
       
-        
       
-        
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
       
     </section>
-    
+  </article>
+
+
   
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'springmvc和springboot的区别',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class="l_side">
   
@@ -344,6 +440,18 @@
           
           
             
+  <section class="widget related_posts">
+    
+<header class="pure">
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基本数据类型\" title="java基本数据类型" rel="bookmark">java基本数据类型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\IO流\" title="IO流" rel="bookmark">IO流</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\java基础\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\04\java基础2\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\流的注册和读取\" title="流的注册和读取" rel="bookmark">流的注册和读取</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
           
         

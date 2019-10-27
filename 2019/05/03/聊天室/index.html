@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>简易聊天室 | AnQing</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/ico.png">
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+
+
+  <header class="l_header no_sidebar pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href="/">
+        
+          AnQing
+        
+      </a>
+			<div class="menu navgation">
+				<ul class="h-list">
+          
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索">
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a class="fas fa-search fa-fw" href="javascript:void(0)"></a></li>
+				
+				<li class="s-menu"><a class="fas fa-bars fa-fw" href="javascript:void(0)"></a></li>
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo flat-box"></a>
+			<ul class="switcher h-list">
+				<li class="s-comment"><a class="flat-btn fas fa-comments fa-fw" href="javascript:void(0)"></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/" id="home">
+								<i class="fas fa-clock fa-fw"></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
+								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/projects/" id="projects">
+								<i class="fas fa-code-branch fa-fw"></i>&nbsp;空白项目
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
+								<i class="fas fa-link fa-fw"></i>&nbsp;友情链接
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/" rel="nofollow" id="home">
+								<i class="fas fa-book fa-fw"></i>&nbsp;主题文档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/about/" rel="nofollow" id="about">
+								<i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class="l_main">
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2019/05/03/聊天室/">
+        简易聊天室
+      </a>
+    </h1>
+  
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-03</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h4 id="聊天室服务端"><a href="#聊天室服务端" class="headerlink" title="聊天室服务端"></a>聊天室服务端</h4><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line">public class Server &#123;</span><br><span class="line">	/*</span><br><span class="line">	 * 运行在服务端的ServerSocket</span><br><span class="line">	 * 有两个主要作用:</span><br><span class="line">	 * 1:向系统申请对外的服务端口,客户端就是通过</span><br><span class="line">	 *   这个端口与服务端建立连接的.</span><br><span class="line">	 * 2:监听服务端口,等待客户端连接.一旦一个客户端</span><br><span class="line">	 *   通过Socket与服务端建立连接,那么ServerSocket</span><br><span class="line">	 *   会创建一个Socket与该客户端通讯.  </span><br><span class="line">	 */</span><br><span class="line">	private ServerSocket server;</span><br><span class="line">	/*</span><br><span class="line">	 * 该数组用于存放所有客户端的输出流</span><br><span class="line">	 */</span><br><span class="line">//	private PrintWriter[] allOut = new PrintWriter[0];</span><br><span class="line">	private List&lt;PrintWriter&gt; allOut</span><br><span class="line">			= new ArrayList&lt;PrintWriter&gt;();</span><br><span class="line"></span><br><span class="line">	public <span class="function"><span class="title">Server</span></span>()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			/*</span><br><span class="line">			 * 创建ServerSocket的同时向系统申请</span><br><span class="line">			 * 对外的服务端口.注意,该端口不能和</span><br><span class="line">			 * 其他程序冲突,否则会抛出地址被占用</span><br><span class="line">			 * 的异常.</span><br><span class="line">			 */</span><br><span class="line">			server = new ServerSocket(8088);</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void <span class="function"><span class="title">start</span></span>()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			/*</span><br><span class="line">			 * ServerSocket提供方法:</span><br><span class="line">			 * Socket accept()</span><br><span class="line">			 * 该方法是一个阻塞方法,调用后即等待</span><br><span class="line">			 * 客户端的连接,一旦一个客户端通过</span><br><span class="line">			 * 端口连接,那么accept方法会返回一个</span><br><span class="line">			 * Socket实例,通过这个Socket实例就</span><br><span class="line">			 * 可以与刚连接的客户端交互了</span><br><span class="line">			 */</span><br><span class="line">			<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">				System.out.println(<span class="string">"等待客户端连接..."</span>);</span><br><span class="line">				Socket socket = server.accept();</span><br><span class="line">				System.out.println(<span class="string">"一个客户端连接了!"</span>);</span><br><span class="line">				//启动一个线程,处理该客户端交互工作</span><br><span class="line">				ClientHandler handler</span><br><span class="line">					= new ClientHandler(socket);</span><br><span class="line">				Thread t = new Thread(handler);</span><br><span class="line">				t.start();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Server server = new Server();</span><br><span class="line">		server.start();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 该线程任务负责与指定Socket所对应的客户端</span><br><span class="line">	 * 进行交互.</span><br><span class="line">	 * @author adminitartor</span><br><span class="line">	 *</span><br><span class="line">	 */</span><br><span class="line">	private class ClientHandler</span><br><span class="line">						implements Runnable&#123;</span><br><span class="line">		//当前线程通过这个Socket与对应客户端交互</span><br><span class="line">		private Socket socket;</span><br><span class="line">		/**</span><br><span class="line">		 * 实例化时将对应客户端的Socket传入</span><br><span class="line">		 * @param socket</span><br><span class="line">		 */</span><br><span class="line">		public ClientHandler(Socket socket)&#123;</span><br><span class="line">			this.socket = socket;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public void <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">			PrintWriter pw = null;</span><br><span class="line">			try &#123;</span><br><span class="line">				InputStream <span class="keyword">in</span> = socket.getInputStream();</span><br><span class="line">				BufferedReader br = new BufferedReader(</span><br><span class="line">					new InputStreamReader(</span><br><span class="line">						<span class="keyword">in</span>,<span class="string">"UTF-8"</span></span><br><span class="line">					)</span><br><span class="line">				);</span><br><span class="line">				/*</span><br><span class="line">				 * 获取输出流,用于给当前客户端回复消息</span><br><span class="line">				 */</span><br><span class="line">				pw = new PrintWriter(</span><br><span class="line">					new BufferedWriter(</span><br><span class="line">						new OutputStreamWriter(</span><br><span class="line">							socket.getOutputStream(),</span><br><span class="line">							<span class="string">"UTF-8"</span></span><br><span class="line">						)</span><br><span class="line">					),<span class="literal">true</span></span><br><span class="line">				);</span><br><span class="line">				//将当前客户端对应的输出流存入共享数组</span><br><span class="line">				synchronized (allOut) &#123;		</span><br><span class="line">//					//1扩容数组</span><br><span class="line">//					allOut = Arrays.copyOf(allOut, allOut.length+1);</span><br><span class="line">//					//2将输出流存入数组</span><br><span class="line">//					allOut[allOut.length-1] = pw;</span><br><span class="line"></span><br><span class="line">					allOut.add(pw);</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				/*</span><br><span class="line">				 * 客户端在断开连接时不同系统有不同反应</span><br><span class="line">				 * linux的客户端断开后,br.readLine方法会</span><br><span class="line">				 * 返回null.</span><br><span class="line">				 * windows的客户端断开连接后,br.readLine方法</span><br><span class="line">				 * 会直接抛出异常.</span><br><span class="line">				 */</span><br><span class="line">				String message = null;</span><br><span class="line">				<span class="keyword">while</span>((message = br.readLine())!=null)&#123;</span><br><span class="line">					System.out.println(<span class="string">"客户端说:"</span>+message);</span><br><span class="line">					//回复客户端</span><br><span class="line">//					pw.println(<span class="string">"客户端说:"</span>+message);</span><br><span class="line">					//发送给所有客户端</span><br><span class="line">					synchronized (allOut) &#123;</span><br><span class="line">//						<span class="keyword">for</span>(int i=0;i&lt;allOut.length;i++)&#123;</span><br><span class="line">//							allOut[i].println(<span class="string">"客户端说:"</span>+message);</span><br><span class="line">//						&#125;</span><br><span class="line">						<span class="keyword">for</span>(PrintWriter o : allOut)&#123;</span><br><span class="line">							o.println(<span class="string">"客户端说:"</span>+message);</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125; catch (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">			&#125; finally&#123;</span><br><span class="line">				//处理客户端断开连接后的操作</span><br><span class="line"></span><br><span class="line">				//1将该客户端的输出流从共享数组中删除</span><br><span class="line">				synchronized (allOut) &#123;</span><br><span class="line">//					<span class="keyword">for</span>(int i=0;i&lt;allOut.length;i++)&#123;</span><br><span class="line">//						<span class="keyword">if</span>(allOut[i]==pw)&#123;</span><br><span class="line">//							//将最后一个元素放入当前位置</span><br><span class="line">//							allOut[i] = allOut[allOut.length-1];</span><br><span class="line">//							//缩容</span><br><span class="line">//							allOut = Arrays.copyOf(allOut, allOut.length-1);</span><br><span class="line">//							<span class="built_in">break</span>;</span><br><span class="line">//						&#125;</span><br><span class="line">//					&#125;</span><br><span class="line">					allOut.remove(pw);</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				/*</span><br><span class="line">				 * 2客户端断开连接后,服务端关闭</span><br><span class="line">				 * 该客户端Socket,释放资源</span><br><span class="line">				 */</span><br><span class="line">				try &#123;</span><br><span class="line">					socket.close();</span><br><span class="line">				&#125; catch (IOException e) &#123;</span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="聊天室客户端"><a href="#聊天室客户端" class="headerlink" title="聊天室客户端"></a>聊天室客户端</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">public class Client &#123;</span><br><span class="line">	/*</span><br><span class="line">	 * java.net.Socket</span><br><span class="line">	 * 套接字,封装了TCP协议.Socket提供了两条流</span><br><span class="line">	 * 用来与服务端进行双向通讯.</span><br><span class="line">	 */</span><br><span class="line">	private Socket socket;</span><br><span class="line">	/**</span><br><span class="line">	 * 构造方法,用来初始化客户端</span><br><span class="line">	 */</span><br><span class="line">	public <span class="function"><span class="title">Client</span></span>()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			/*</span><br><span class="line">			 * 实例化Socket就是连接服务端的过程</span><br><span class="line">			 * 参数1:服务端地址</span><br><span class="line">			 * 参数2:服务端开启的服务端口</span><br><span class="line">			 *</span><br><span class="line">			 * 通过服务端IP地址可以找到服务端所处</span><br><span class="line">			 * 计算机,再通过端口找到运行在服务端</span><br><span class="line">			 * 计算机上的服务端应用程序.</span><br><span class="line">			 */</span><br><span class="line">			socket = new Socket(<span class="string">"localhost"</span>,8088);</span><br><span class="line">		&#125; catch (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * 客户端开始工作的方法</span><br><span class="line">	 */</span><br><span class="line">	public void <span class="function"><span class="title">start</span></span>()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			//先启动线程接收服务端发送的消息</span><br><span class="line">			ServerHandler handler = new ServerHandler();</span><br><span class="line">			Thread t = new Thread(handler);</span><br><span class="line">			t.start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			Scanner scanner = new Scanner(System.in);</span><br><span class="line">			/*</span><br><span class="line">			 * Socket提供方法:</span><br><span class="line">			 * OutputStream getOutputStream()</span><br><span class="line">			 * 通过返回的字节输出流写出的数据会发送</span><br><span class="line">			 * 给远端计算机,对于客户端这边而言远端</span><br><span class="line">			 * 计算机就是服务端了.</span><br><span class="line">			 */</span><br><span class="line">			OutputStream out</span><br><span class="line">				= socket.getOutputStream();</span><br><span class="line">			PrintWriter pw = new PrintWriter(</span><br><span class="line">				new BufferedWriter(</span><br><span class="line">					new OutputStreamWriter(</span><br><span class="line">						out,<span class="string">"UTF-8"</span></span><br><span class="line">					)</span><br><span class="line">				),<span class="literal">true</span></span><br><span class="line">			);				</span><br><span class="line">			<span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">				String line = scanner.nextLine();</span><br><span class="line">				pw.println(line);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Client client = new Client();</span><br><span class="line">		client.start();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 该线程负责循环接收服务端发送过来的消息.</span><br><span class="line">	 * 给服务端发送消息与接收服务端发过来的消息</span><br><span class="line">	 * 要放在两个不同的线程要运行,这样才能做到</span><br><span class="line">	 * 互相不干扰.</span><br><span class="line">	 * @author adminitartor</span><br><span class="line">	 *</span><br><span class="line">	 */</span><br><span class="line">	private class ServerHandler</span><br><span class="line">						implements Runnable&#123;</span><br><span class="line">		public void <span class="function"><span class="title">run</span></span>()&#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				BufferedReader br = new BufferedReader(</span><br><span class="line">					new InputStreamReader(</span><br><span class="line">						socket.getInputStream(),</span><br><span class="line">						<span class="string">"UTF-8"</span></span><br><span class="line">					)</span><br><span class="line">				);</span><br><span class="line">				String message = null;</span><br><span class="line">				<span class="keyword">while</span>((message = br.readLine())!=null)&#123;</span><br><span class="line">					System.out.println(message);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; catch (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <hr>
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-03T23:45:33+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年5月3日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Demo/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Demo</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/05/04/java基础2/" rel="prev" title="java基础">
+                                  
+                                      java基础
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/05/01/IO流/" rel="prev" title="IO流">
+                                    
+                                        IO流
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '简易聊天室',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class="l_side">
+  
+    
+    
+      
+        
+          
+          
+            <section class="widget author">
+  <div class="content pure">
+    
+      <div class="avatar">
+        <img class="avatar" src="/pic.png">
+      </div>
+    
+    
+      <div class="text">
+        
+        
+        
+          <p><span id="jinrishici-sentence">-。-</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+  </div>
+</section>
+
+          
+        
+      
+        
+          
+          
+            
+  <section class="widget category">
+    
+<header class="pure">
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/blog/categories/" title="blog/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/2019年10月/" href="/categories/2019年10月/"><div class="name">2019年10月</div><div class="badge">(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/2019年4月/" href="/categories/2019年4月/"><div class="name">2019年4月</div><div class="badge">(8)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/2019年5月/" href="/categories/2019年5月/"><div class="name">2019年5月</div><div class="badge">(4)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class="widget tagcloud">
+    
+<header class="pure">
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/blog/tags/" title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      <a href="/tags/Demo/" style="font-size: 14px; color: #999">Demo</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/前端/" style="font-size: 19px; color: #777">前端</a> <a href="/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/软件/" style="font-size: 14px; color: #999">软件</a>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+  <section class="widget related_posts">
+    
+<header class="pure">
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\IO流\" title="IO流" rel="bookmark">IO流</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\04\java基础2\" title="java基础" rel="bookmark">java基础</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+          
+        
+      
+        
+          
+          
+            
+
+
+  <section class="widget music">
+    
+<header class="pure">
+  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;听会儿</div>
+  
+    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/user/home?id=610370546" title="https://music.163.com/#/user/home?id=610370546">
+    <i class="far fa-heart fa-fw"></i></a>
+  
+</header>
+
+    <div class="content pure">
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="945776933" data-volume="0.7">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+
+
+    </div>
+  </section>
+
+
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>你好</p>
+</div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="/js/volantis.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "ntRH7DIoBb0mJ1dyTjDPkpnM-gzGzoHsz",
+    appKey: "AztMESC4lm4tXCEldOsdizhS",
+    placeholder: "来啦，朋友~",
+    pageSize:'20',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
+
+
+
+  <script src="/js/app.js"></script>
+
+
+  <script src="/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  <script type="text/javascript" src="/js/love.js"></script>
+</body>
+</html>
