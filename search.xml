@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>Spring Boot 问题集001</title>
-      <link href="/2019/10/28/SpringBootProblem001/"/>
-      <url>/2019/10/28/SpringBootProblem001/</url>
-      
-        <content type="html"><![CDATA[<h4 id="新建Maven项目时，每个pom文件第一行都报错"><a href="#新建Maven项目时，每个pom文件第一行都报错" class="headerlink" title="新建Maven项目时，每个pom文件第一行都报错"></a>新建Maven项目时，每个pom文件第一行都报错</h4><blockquote><p>java报错 pom.xml第一行报”org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project…(转载)</p></blockquote><a id="more"></a><h5 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h5><ul><li>原因就是你的maven的配置文件不是最新的</li></ul><h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul><li>更新eclipse中的maven插件</li><li>Help——&gt;Install New SoftWare</li><li>点击 Add,添加配置信息</li><li>name为 MavenArchiver</li><li>Location中输入</li></ul><blockquote><p><a href="http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/" target="_blank" rel="noopener">http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/</a></p></blockquote><ul><li>点击 next 前，将 eclipse Install 窗口右下角的 Contact all update sites during install to find required software 选项取消掉。</li><li>一直next confirm 安装更新 提示重启eclipse 然后再右键项目maven update project</li><li><a href="https://www.cnblogs.com/appium/p/11168441.html" target="_blank" rel="noopener">原文</a></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 2019年10月 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> SpringBoot </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>springmvc和springboot的区别</title>
       <link href="/2019/10/27/springmvc%E5%92%8Cspringboot%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
       <url>/2019/10/27/springmvc%E5%92%8Cspringboot%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
