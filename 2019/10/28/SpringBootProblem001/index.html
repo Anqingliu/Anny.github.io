@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>一些必要的链接 | AnQing</title>
+  <title>Spring Boot 问题集001 | AnQing</title>
   
   
 
@@ -46,55 +46,7 @@
   
 
 
-  <div class="cover-wrapper">
-    <div class="cover links half">
-      
-        
-  <h1 class="title">AnQing</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-rss fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/projects/" id="projects">
-            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-link fa-fw"></i>&nbsp;链接
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/" rel="nofollow" id="about">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </div>
-    <header class="l_header no_sidebar pure">
+  <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -186,14 +138,16 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
-  <article id="links" class="post white-box article-type-links" itemscope itemprop="blogPost">
-    
+  
+
+  
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class="meta">
@@ -204,8 +158,8 @@
         
   
     <h1 class="title">
-      <a href="/friends/index.html">
-        一些必要的链接
+      <a href="/2019/10/28/SpringBootProblem001/">
+        Spring Boot 问题集001
       </a>
     </h1>
   
@@ -225,7 +179,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-27</p>
+    <p>2019-10-28</p>
   </a>
 </div>
 
@@ -262,18 +216,94 @@
   </section>
 
 
-      <section class="article typo l_friends">
-        
-        <br><hr>
-        <ul>
-<li><a href="https://github.com/Anqingliu" target="_blank" rel="noopener">Anqingliu</a></li>
-<li><a href="https://xaoxuu.com/wiki/" target="_blank" rel="noopener">material-x博客主题</a></li>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h4 id="新建Maven项目时，每个pom文件第一行都报错"><a href="#新建Maven项目时，每个pom文件第一行都报错" class="headerlink" title="新建Maven项目时，每个pom文件第一行都报错"></a>新建Maven项目时，每个pom文件第一行都报错</h4><blockquote>
+<p>java报错 pom.xml第一行报”org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project…(转载)</p>
+</blockquote>
+<a id="more"></a>
+<h5 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h5><ul>
+<li>原因就是你的maven的配置文件不是最新的</li>
+</ul>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>更新eclipse中的maven插件</li>
+<li>Help——&gt;Install New SoftWare</li>
+<li>点击 Add,添加配置信息</li>
+<li>name为 MavenArchiver</li>
+<li>Location中输入</li>
+</ul>
+<blockquote>
+<p><a href="http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/" target="_blank" rel="noopener">http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-mavenarchiver/0.17.2/N/LATEST/</a></p>
+</blockquote>
+<ul>
+<li>点击 next 前，将 eclipse Install 窗口右下角的 Contact all update sites during install to find required software 选项取消掉。</li>
+<li>一直next confirm 安装更新 提示重启eclipse 然后再右键项目maven update project</li>
+<li><a href="https://www.cnblogs.com/appium/p/11168441.html" target="_blank" rel="noopener">原文</a></li>
 </ul>
 
-      </section>
-  </article>
+        </div>
+        
+          
 
-  <!-- 显示推荐文章和评论 -->
+
+  <section class="meta" id="footer-meta">
+    <hr>
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-10-28T22:05:15+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年10月28日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SpringBoot/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>SpringBoot</p></a></div>
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/10/27/springmvc和springboot的区别/" rel="prev" title="springmvc和springboot的区别">
+                                    
+                                        springmvc和springboot的区别
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
 
 
 
@@ -293,6 +323,20 @@
     </section>
   </article>
 
+
+  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Spring Boot 问题集001',
+      tools: true
+    }
+  </script>
 
 
 </div>
@@ -386,6 +430,18 @@
           
           
             
+  <section class="widget related_posts">
+    
+<header class="pure">
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\27\springmvc和springboot的区别\" title="springmvc和springboot的区别" rel="bookmark">springmvc和springboot的区别</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
           
         
@@ -536,18 +592,6 @@
   <script src="/js/search.js"></script>
 
 
-
-  <script src="https://cdn.jsdelivr.net/gh/toddmotto/echo@1.7.3/src/echo.js"></script>
-  <script>
-    echo.init({
-      offset: 100,
-      throttle: 250,
-      unload: false,
-      callback: function (element, op) {
-        // console.log(element, 'has been', op + 'ed');
-      }
-    });
-  </script>
 
 
 <!-- 复制 -->
