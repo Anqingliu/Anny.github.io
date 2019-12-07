@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>反编译简单APK</title>
+      <link href="/2019/12/07/%E5%8F%8D%E7%BC%96%E8%AF%91%E7%AE%80%E5%8D%95apk/"/>
+      <url>/2019/12/07/%E5%8F%8D%E7%BC%96%E8%AF%91%E7%AE%80%E5%8D%95apk/</url>
+      
+        <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><ul><li>反编译出来后,我还是没有把一个简单那的apk程序还原,正在探索中…<a id="more"></a></li></ul><h4 id="准备必要工具"><a href="#准备必要工具" class="headerlink" title="准备必要工具"></a>准备必要工具</h4><ol><li><a href="https://bitbucket.org/iBotPeaches/apktool/downloads" target="_blank" rel="noopener">apktool</a><blockquote><p>作用：资源文件获取，可以提取出图片文件和布局文件进行使用查看</p></blockquote></li></ol><ol start="2"><li><p><a href="http://sourceforge.net/projects/dex2jar/files/" target="_blank" rel="noopener">dex2jar</a></p><blockquote><p>作用：将apk反编译成java源码（classes.dex转化成jar文件）</p></blockquote></li><li><p><a href="http://jd.benow.ca/" target="_blank" rel="noopener">jd-gui</a></p><blockquote><p>作用：查看APK中classes.dex转化成出的jar文件，即源码文件</p></blockquote></li><li><p>将【dex2jar-2.0.zip】和【jd-gui-windows-1.3.0.zip】分别解压</p></li></ol><ol start="5"><li><p>进入CMD命令行,来到apktool_2.0.1.jar目录下,运行<code>java -jar jar包名.jar</code></p><blockquote><p>使用如下的命令运行apktool_2.0.1.jar反编译<br><code>java -jar apktool_2.0.1.jar d -f E:\AndroidDevelopTool\Android反编译工具包\测试apk\demo.apk -o demo</code></p></blockquote></li><li><p>使用dex2jar反编译apk得到Java源代码</p><ul><li>将要反编译的APK后缀名改为.rar或者 .zip，并解压，得到其中的classes.dex文件</li><li>将获取到的classes.dex放到之前解压出来的工具【dex2jar-2.0】文件夹内</li><li>在命令行下定位到dex2jar.bat所在目录，输入”d2j-dex2jar classes.dex</li><li>命令执行完成之后，在当前目录下就可以看到生成的Jar文件了</li><li>反编译classes.dex得到classes-dex2jar.jar文件之后，就可以使用【jd-gui】工具将class文件反编译成java源代码了</li></ul></li><li><p><a href="https://blog.csdn.net/s13383754499/article/details/78914592" target="_blank" rel="noopener">转载</a></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2019年12月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Eclipse搭建SpringBoot之HelloWorld(转载)</title>
       <link href="/2019/10/29/SpringBoot%E7%9A%84HelloWorld/"/>
       <url>/2019/10/29/SpringBoot%E7%9A%84HelloWorld/</url>
