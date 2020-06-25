@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: Demo | AnQing</title>
+  <title>java基础 | AnQing</title>
   
   
 
@@ -46,55 +46,7 @@
   
 
 
-  <div class="cover-wrapper">
-    <div class="cover  half">
-      
-        
-  <h1 class="title">AnQing</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-rss fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/projects/" id="projects">
-            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-link fa-fw"></i>&nbsp;链接
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/" rel="nofollow" id="about">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </div>
-    <header class="l_header no_sidebar pure">
+  <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -186,29 +138,16 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class="post-wrapper">
-            <article class="post reveal ">
+
   
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class="meta">
@@ -217,11 +156,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2019/05/03/J_聊天室/">
-      简易聊天室
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2019/05/04/J_javaDemo/">
+        java基础
+      </a>
+    </h1>
+  
 
 
       
@@ -238,7 +179,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-03</p>
+    <p>2019-05-04</p>
   </a>
 </div>
 
@@ -246,6 +187,19 @@
         
           
             
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
 
           
         
@@ -262,44 +216,130 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h4 id="聊天室服务端"><a href="#聊天室服务端" class="headerlink" title="聊天室服务端"></a>聊天室服务端</h4>
-      
-        <div class="readmore">
-          <a href="/2019/05/03/J_聊天室/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h4 id="java方法的返回"><a href="#java方法的返回" class="headerlink" title="java方法的返回"></a>java方法的返回</h4><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Demo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 1;</span><br><span class="line">		String b = <span class="string">"abc"</span>;</span><br><span class="line">		Point p = new Point(1,2);</span><br><span class="line">		Collection c = new ArrayList();</span><br><span class="line">		c.add(p);</span><br><span class="line">		dosome(a,b,p,c);</span><br><span class="line">		System.out.println(<span class="string">"a:"</span>+a);</span><br><span class="line">		System.out.println(<span class="string">"b:"</span>+b);</span><br><span class="line">		System.out.println(<span class="string">"p:"</span>+p);</span><br><span class="line">		System.out.println(<span class="string">"c:"</span>+c);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void dosome(int a,String b,Point p,Collection c)&#123;</span><br><span class="line">		a = a + 1;</span><br><span class="line">		b = b + <span class="string">"!"</span>;</span><br><span class="line">		p.setX(2);</span><br><span class="line">		p = new Point(3,4);</span><br><span class="line">		c.clear();</span><br><span class="line">		c.add(p);</span><br><span class="line">		c = new ArrayList();</span><br><span class="line">		c.add(new Point(5,6));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="重写Point方法"><a href="#重写Point方法" class="headerlink" title="重写Point方法"></a>重写Point方法</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public class Point &#123;</span><br><span class="line">	private int x;</span><br><span class="line">	private int y;</span><br><span class="line">	public Point(int x, int y) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.x = x;</span><br><span class="line">		this.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	public int <span class="function"><span class="title">getX</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> x;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setX(int x) &#123;</span><br><span class="line">		this.x = x;</span><br><span class="line">	&#125;</span><br><span class="line">	public int <span class="function"><span class="title">getY</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> y;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setY(int y) &#123;</span><br><span class="line">		this.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	public String <span class="function"><span class="title">toString</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> <span class="string">"("</span>+x+<span class="string">","</span>+y+<span class="string">")"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	public boolean equals(Object o)&#123;</span><br><span class="line">		<span class="keyword">if</span>(o==null)&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(o==this)&#123;</span><br><span class="line">			<span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(o instanceof Point)&#123;</span><br><span class="line">			Point p = (Point)o;</span><br><span class="line">			<span class="built_in">return</span> p.x==this.x&amp;&amp;p.y==this.y;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a:1</span><br><span class="line">b:abc</span><br><span class="line">p:(2,2)</span><br><span class="line">c:[(3,4)]</span><br></pre></td></tr></table></figure>
+
         </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <hr>
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-04T00:12:05+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2019年5月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Java</p></a></div>
+
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/Demo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Demo</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
+
         
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/10/27/J_springmvc和springboot的区别/" rel="prev" title="springmvc和springboot的区别">
+                                  
+                                      springmvc和springboot的区别
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/05/03/J_聊天室/" rel="prev" title="简易聊天室">
+                                    
+                                        简易聊天室
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Demo/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Demo</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'java基础',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class="l_side">
   
@@ -397,6 +437,18 @@
           
           
             
+  <section class="widget related_posts">
+    
+<header class="pure">
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\J_IO流\" title="IO流" rel="bookmark">IO流</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\J_java介绍\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\J_java基本数据类型\" title="java基本数据类型" rel="bookmark">java基本数据类型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\25\J_关键字\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\27\J_springmvc和springboot的区别\" title="springmvc和springboot的区别" rel="bookmark">springmvc和springboot的区别</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\03\16\J_springmvc回顾\" title="springmvc回顾" rel="bookmark">springmvc回顾</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\J_流的注册和读取\" title="流的注册和读取" rel="bookmark">流的注册和读取</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\03\J_聊天室\" title="简易聊天室" rel="bookmark">简易聊天室</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
           
         
@@ -508,6 +560,36 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="/js/volantis.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "ntRH7DIoBb0mJ1dyTjDPkpnM-gzGzoHsz",
+    appKey: "AztMESC4lm4tXCEldOsdizhS",
+    placeholder: "来啦，朋友~",
+    pageSize:'20',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
 
 
 

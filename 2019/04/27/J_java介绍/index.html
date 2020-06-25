@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: Demo | AnQing</title>
+  <title>java基础 | AnQing</title>
   
   
 
@@ -46,55 +46,7 @@
   
 
 
-  <div class="cover-wrapper">
-    <div class="cover  half">
-      
-        
-  <h1 class="title">AnQing</h1>
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-rss fa-fw"></i>&nbsp;博客
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/projects/" id="projects">
-            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/friends/" rel="nofollow" id="friends">
-            <i class="fas fa-link fa-fw"></i>&nbsp;链接
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/" rel="nofollow" id="about">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于我
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </div>
-    <header class="l_header no_sidebar pure">
+  <header class="l_header no_sidebar pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -186,29 +138,16 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class="post-wrapper">
-            <article class="post reveal ">
+
   
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class="meta">
@@ -217,11 +156,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2019/05/03/J_聊天室/">
-      简易聊天室
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2019/04/27/J_java介绍/">
+        java基础
+      </a>
+    </h1>
+  
 
 
       
@@ -238,7 +179,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-03</p>
+    <p>2019-04-27</p>
   </a>
 </div>
 
@@ -246,6 +187,19 @@
         
           
             
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class="notlink">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
 
           
         
@@ -262,44 +216,169 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h4 id="聊天室服务端"><a href="#聊天室服务端" class="headerlink" title="聊天室服务端"></a>聊天室服务端</h4>
-      
-        <div class="readmore">
-          <a href="/2019/05/03/J_聊天室/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          <h4 id="Java开发环境"><a href="#Java开发环境" class="headerlink" title="Java开发环境"></a>Java开发环境</h4><ul>
+<li>编译运行过程<ul>
+<li>编译期:.java源文件,经过编译,生成.class字节码文件</li>
+<li>运行期: JVM加载.class并运行.class<ul>
+<li>.java文件–通过javac命令—编译—.class文件</li>
+<li>.class文件—通过java命令–运行–结果<a id="more"></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>特点:跨平台,一次编程到处使用(显示中一般需要重新编写)</p>
+</blockquote>
+<ul>
+<li>JVM:<code>java虚拟机</code>,加载.class并运行.class<ul>
+<li>事先在对应的操作系统上安装对应版本的JVM，java 程序是在JVM中进行执行，使得不同的操作系统只要是同一java程序的得到的结果是一样的</li>
+</ul>
+</li>
+<li>JRE:<code>java运行环境</code>(Java Runtime Environment)除了包含JVM以外还包含了运行java程序所必须的环境<ul>
+<li>JVM+java系统类库(API)</li>
+</ul>
+</li>
+<li>JDK:<code>java开发工具包</code>(java Devlopment Kit),除了包含JRE以外还包含了开发java程序所必须的命令工具<ul>
+<li>JDK=JRE+编译,运行等命令工具</li>
+</ul>
+</li>
+<li>运行java程序的最小环境是JRE</li>
+<li>开发java程序的最小环境是JDK</li>
+</ul>
+<p>####配置环境变量</p>
+<ul>
+<li>JVAV_HOME:指向jdk的安装路径</li>
+<li>CLASSPATH:表示类的搜索路径</li>
+<li>PATH:指向jdk下的bin目录</li>
+</ul>
+<p>####注意事项</p>
+<ol>
+<li>.class文件名和类名保持一致</li>
+<li>公共类的类名要和.java文件名保持一致</li>
+<li>一个.java文件可以支持多个类，但是最多只能有一个公共类(public class)</li>
+</ol>
+
         </div>
+        
+          
+
+
+  <section class="meta" id="footer-meta">
+    <hr>
+    <div class="new-meta-box">
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-25T12:45:06+08:00">
+  <a class="notlink">
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>最后更新于 2020年6月25日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag" aria-hidden="true"></i>&nbsp;<p>Java</p></a></div>
+
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/Demo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Demo</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
+
         
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/04/27/J_java基本数据类型/" rel="prev" title="java基本数据类型">
+                                  
+                                      java基本数据类型
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Java/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Java</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/04/21/Z_离线服务器搭建svn并使用/" rel="prev" title="svn的搭建和使用">
+                                    
+                                        svn的搭建和使用
+                                    
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/软件/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>软件</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'java基础',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class="l_side">
   
@@ -397,6 +476,18 @@
           
           
             
+  <section class="widget related_posts">
+    
+<header class="pure">
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content pure">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\J_IO流\" title="IO流" rel="bookmark">IO流</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\27\J_java基本数据类型\" title="java基本数据类型" rel="bookmark">java基本数据类型</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\25\J_关键字\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\27\J_springmvc和springboot的区别\" title="springmvc和springboot的区别" rel="bookmark">springmvc和springboot的区别</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\03\16\J_springmvc回顾\" title="springmvc回顾" rel="bookmark">springmvc回顾</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\01\J_流的注册和读取\" title="流的注册和读取" rel="bookmark">流的注册和读取</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\05\04\J_javaDemo\" title="java基础" rel="bookmark">java基础</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\07\H_Test\" title="测试发文" rel="bookmark">测试发文</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\04\29\H_鼠标移动自动闪开\" title="鼠标移动自动闪开" rel="bookmark">鼠标移动自动闪开</a></h3></div></li></ul>
+    </div>
+  </section>
+
 
           
         
@@ -508,6 +599,36 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      <script src="/js/volantis.js"></script>
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'false' == true;
+  var verify = 'false' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "ntRH7DIoBb0mJ1dyTjDPkpnM-gzGzoHsz",
+    appKey: "AztMESC4lm4tXCEldOsdizhS",
+    placeholder: "来啦，朋友~",
+    pageSize:'20',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'false'
+  })
+  </script>
 
 
 
