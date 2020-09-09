@@ -4,7 +4,107 @@
   
     
     <entry>
-      <title>java基础</title>
+      <title>Spring Boot 2.0 的更新</title>
+      <link href="/2020/09/07/J_SpringBoot2.0%E6%9B%B4%E6%96%B0/"/>
+      <url>/2020/09/07/J_SpringBoot2.0%E6%9B%B4%E6%96%B0/</url>
+      
+        <content type="html"><![CDATA[<h4 id="基础环境升级"><a href="#基础环境升级" class="headerlink" title="基础环境升级"></a>基础环境升级</h4><ul><li><p>最低JDK8</p><a id="more"></a></li><li>Spring Boot 2.0 基于 Spring Framework 5 构建，Spring Boot2.0更新<ul><li>Jetty 开源的Servlet容器,例如JSP和Servlet</li><li>Tomcat 8.5</li><li>Flyway5 数据库版本管理理工具.</li><li>Hibernate5.2</li><li>Gradle3.4</li><li>Thymeleaf3.0</li></ul></li></ul><ul><li>HikariCP HikariCP 是一个高性能的 JDBC 连接池</li><li>Security 包含ACLs、LDAP、JAAS、CAS</li><li>OAuth 2 OAuth 2 是一个授权框架，或称授权标准，它可以使第三方应用程序或客户端获得对 HTTP 服务上（如Google、GitHub ）用户帐户信息的有限访问权限。</li><li>Micrometer 是一款监控指标的度量量类库，可以让你在没有供应商锁定的情况下对 JVM 的应⽤用程序代码进行调整。</li><li>Redis 默认使用Lettuce</li><li>配置属性绑定</li><li>转换器支持</li><li>Actuator 改进</li><li>测试</li><li>支持 HTTP/2</li><li>嵌入式 Netty服务器</li><li>Kotlin</li><li>JOOQ 的支持</li><li>支持 Quartz</li><li>响应式编程</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2020年9月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Boot 产生的背景和它的设计理理念</title>
+      <link href="/2020/09/07/J_SpringBoot%E7%AE%80%E4%BB%8B/"/>
+      <url>/2020/09/07/J_SpringBoot%E7%AE%80%E4%BB%8B/</url>
+      
+        <content type="html"><![CDATA[<h4 id="约定优于配置"><a href="#约定优于配置" class="headerlink" title="约定优于配置"></a>约定优于配置</h4><ul><li><p>本质是说，开发人员仅需规定应用中不符约定的部分。例如，如果模型中有个名为 User 的类，那么数据库中对应的表就会默认命名为 user。只有在偏离这一约定时，例如将该表命名为“user_info”，才需写有关这个名字的配置。</p><a id="more"></a></li><li><p>我们可以按照这个思路来设想，我们约定 Controller 层就是 Web 请求层可以省略 MVC 的配置；我们约定在Service 结尾的类自动注入事务，就可以省略了 <a href="https://my.oschina.net/haogrgr/blog/308199" target="_blank" rel="noopener">Spring 的切面事务配置</a>.</p></li><li><p>在 Spring 体系中，Spring Boot JPA 就是约定优于配置最佳实现之一，不需要关注表结构，我们约定类名即是表名，属性名即是表的字段，String 对应 varchar，long 对应 bigint，只有需要一些特殊要求的属性，我们再单独进行配置，按照这个约定我们可以将以前的工作简化。</p></li><li><p>Spring Boot Starters 基于约定优于配置的理理念来设计，Spring Boot Starter 中有两个核心组件：自动配置代码和提供自动配置模块及其它有用的依赖。</p></li></ul><h4 id="Spring、Spring-Boot-和-Spring-Cloud-的关系"><a href="#Spring、Spring-Boot-和-Spring-Cloud-的关系" class="headerlink" title="Spring、Spring Boot 和 Spring Cloud 的关系"></a>Spring、Spring Boot 和 Spring Cloud 的关系</h4><ul><li><p>Spring 最初核心的两大核心功能 Spring IoC 和 Spring Aop 成就了 Spring.</p></li><li><p>Spring Cloud 是一系列框架的有序集合，它利用 Spring Boot 的开发便利利性巧妙地简化了了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路路器器、数据监控等，都可以用 Spring Boot的开发风格做到一键启动和部署。</p></li></ul><blockquote><p>它们的关系`Spring IoC&gt;Spring&gt;SpringBoot&gt;SpringCloud</p></blockquote><blockquote><p>转载<a href="https://github.com/ityouknow/spring-boot-examples" target="_blank" rel="noopener">https://github.com/ityouknow/spring-boot-examples</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2020年9月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java几道算法题</title>
+      <link href="/2020/06/26/J_%E7%AE%97%E6%B3%951/"/>
+      <url>/2020/06/26/J_%E7%AE%97%E6%B3%951/</url>
+      
+        <content type="html"><![CDATA[<h4 id="题1"><a href="#题1" class="headerlink" title="题1"></a>题1</h4><blockquote><p>“百钱买百鸡”是我国古代的著名数学题。题目这样描述：3文钱可以买1只公鸡，2文钱可以买一只母鸡，1文钱可以买3只小鸡。用100 文钱买100 只鸡，那么各有公鸡、母鸡、小鸡多少只？<br><a id="more"></a></p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class ANS12&#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">//定义变量</span><br><span class="line">//公鸡</span><br><span class="line">int x=0;</span><br><span class="line">//母鸡</span><br><span class="line">int y=0;</span><br><span class="line">//小鸡</span><br><span class="line">int z=0;</span><br><span class="line"></span><br><span class="line">//</span><br><span class="line"><span class="keyword">for</span>(x=0;x&lt;=33;x++)&#123;//表示的是公鸡的范围</span><br><span class="line"><span class="keyword">for</span>(y=0;y&lt;=50;y++)&#123;//表示的是母鸡的范围</span><br><span class="line">//小鸡</span><br><span class="line">z=100-x-y;</span><br><span class="line">//保证小鸡被3整除</span><br><span class="line"><span class="keyword">if</span>(z%3==0)&#123;</span><br><span class="line">//判断条件</span><br><span class="line"><span class="keyword">if</span>(3*x+2*y+(z/3)==100)&#123;</span><br><span class="line">System.out.println(<span class="string">"公鸡："</span>+x+<span class="string">",母鸡："</span>+y+<span class="string">",小鸡："</span>+z);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>读入一个整数n，输出如下图形:<br>当输入 n=3时，输出:<br>    *</p></blockquote><hr><hr><p>当输入 n=4时，输出:<br>    *</p><hr><hr><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class ANS15&#123;</span><br><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">//</span><br><span class="line">int n=5;</span><br><span class="line">//打印图形</span><br><span class="line"><span class="keyword">for</span>(int i=1;i&lt;=n;i++)&#123;//控制行数</span><br><span class="line">//打印空格</span><br><span class="line"><span class="keyword">for</span>(int j=0;j&lt;n-i;j++)&#123;</span><br><span class="line">System.out.print(<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br><span class="line">//打印星星</span><br><span class="line"><span class="keyword">for</span>(int z=1;z&lt;=2*i-1;z++)&#123;</span><br><span class="line">System.out.print(<span class="string">"*"</span>);</span><br><span class="line">&#125;</span><br><span class="line">//换行</span><br><span class="line">System.out.println();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2020年6月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中标识符定义的规则</title>
+      <link href="/2020/06/25/J_%E6%A0%87%E8%AF%86%E7%AC%A6/"/>
+      <url>/2020/06/25/J_%E6%A0%87%E8%AF%86%E7%AC%A6/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Java中标识符定义的规则"><a href="#Java中标识符定义的规则" class="headerlink" title="Java中标识符定义的规则"></a>Java中标识符定义的规则</h4><blockquote><p>由大小写字母、数字、下划线、和美元符号组成，但不能以数字开头。标识符不能使用java中的关键字。</p></blockquote><ol><li><p>类和接口名。每个字的首字母大写，含有大小写zhi。例如，MyClass，HelloWorld，Time等。</p></li><li><p>方法名。dao首字符小写，其余的首字母大写，含大小写。尽量少用下划线。例如，myName，setTime等。这种命名方法叫做驼峰式命名。</p></li><li><p>常量名。基本数据类型的常量名使用全部大写字母，字与字之间用下划线分隔。对象常量可大小混写。例如，SIZE_NAME。</p></li><li><p>变量名。可大小写混写，首字符小写，字间分隔符用字的首字母大写。不用下划线，少用美元符号。给变量命名是尽量做到见名知义。<br>-</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2020年6月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java关键字</title>
       <link href="/2020/06/25/J_%E5%85%B3%E9%94%AE%E5%AD%97/"/>
       <url>/2020/06/25/J_%E5%85%B3%E9%94%AE%E5%AD%97/</url>
       
@@ -358,7 +458,7 @@
       <link href="/2019/04/27/J_java%E4%BB%8B%E7%BB%8D/"/>
       <url>/2019/04/27/J_java%E4%BB%8B%E7%BB%8D/</url>
       
-        <content type="html"><![CDATA[<h4 id="Java开发环境"><a href="#Java开发环境" class="headerlink" title="Java开发环境"></a>Java开发环境</h4><ul><li>编译运行过程<ul><li>编译期:.java源文件,经过编译,生成.class字节码文件</li><li>运行期: JVM加载.class并运行.class<ul><li>.java文件–通过javac命令—编译—.class文件</li><li>.class文件—通过java命令–运行–结果<a id="more"></a></li></ul></li></ul></li></ul><blockquote><p>特点:跨平台,一次编程到处使用(显示中一般需要重新编写)</p></blockquote><ul><li>JVM:<code>java虚拟机</code>,加载.class并运行.class<ul><li>事先在对应的操作系统上安装对应版本的JVM，java 程序是在JVM中进行执行，使得不同的操作系统只要是同一java程序的得到的结果是一样的</li></ul></li><li>JRE:<code>java运行环境</code>(Java Runtime Environment)除了包含JVM以外还包含了运行java程序所必须的环境<ul><li>JVM+java系统类库(API)</li></ul></li><li>JDK:<code>java开发工具包</code>(java Devlopment Kit),除了包含JRE以外还包含了开发java程序所必须的命令工具<ul><li>JDK=JRE+编译,运行等命令工具</li></ul></li><li>运行java程序的最小环境是JRE</li><li>开发java程序的最小环境是JDK</li></ul><p>####配置环境变量</p><ul><li>JVAV_HOME:指向jdk的安装路径</li><li>CLASSPATH:表示类的搜索路径</li><li>PATH:指向jdk下的bin目录</li></ul><p>####注意事项</p><ol><li>.class文件名和类名保持一致</li><li>公共类的类名要和.java文件名保持一致</li><li>一个.java文件可以支持多个类，但是最多只能有一个公共类(public class)</li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="Java开发环境"><a href="#Java开发环境" class="headerlink" title="Java开发环境"></a>Java开发环境</h4><ul><li>编译运行过程<ul><li>编译期:.java源文件,经过编译,生成.class字节码文件</li><li>运行期: JVM加载.class并运行.class<ul><li>.java文件–通过javac命令—编译—.class文件</li><li>.class文件—通过java命令–运行–结果<a id="more"></a></li></ul></li></ul></li></ul><blockquote><p>特点:跨平台,一次编程到处使用(显示中一般需要重新编写)</p></blockquote><ul><li>JVM:<code>java虚拟机</code>,加载.class并运行.class<ul><li>事先在对应的操作系统上安装对应版本的JVM，java 程序是在JVM中进行执行，使得不同的操作系统只要是同一java程序的得到的结果是一样的</li></ul></li><li>JRE:<code>java运行环境</code>(Java Runtime Environment)除了包含JVM以外还包含了运行java程序所必须的环境<ul><li>JVM+java系统类库(API)</li></ul></li><li>JDK:<code>java开发工具包</code>(java Devlopment Kit),除了包含JRE以外还包含了开发java程序所必须的命令工具<ul><li>JDK=JRE+编译,运行等命令工具</li></ul></li><li>运行java程序的最小环境是JRE</li><li>开发java程序的最小环境是JDK</li></ul><p>####配置环境变量</p><ul><li>JVAV_HOME:指向jdk的安装路径</li><li>CLASSPATH:表示类的搜索路径</li><li>PATH:指向jdk下的bin目录</li></ul><p>####注意事项</p><ol><li>.class文件名和类名保持一致</li><li>公共类的类名要和.java文件名保持一致</li><li>一个.java文件可以支持多个类，但是最多只能有一个公共类(public class)</li><li>.java文件可以创建过个类，有几个类就能编译生产几个.class文件，如果.java文件中的类名出现大小写最后的结果就是最后一个类的内容</li></ol>]]></content>
       
       
       <categories>
