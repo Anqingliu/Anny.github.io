@@ -247,6 +247,16 @@
 <li>JOOQ 的支持</li>
 <li>支持 Quartz</li>
 <li>响应式编程</li>
+<li>Spring Boot 2.0 支持了了动态 Gif 的启动 Logo 打印。</li>
+<li>启动类 SpringBootServletInitializer</li>
+<li>Spring Boot 2.0 默认不不包含 log4j，建议使⽤用 slf4jThymeleaf 3.0 默认不不包含布局模块配置⽂文件</li>
+<li>Thymeleaf 3.0 默认不不包含布局模块配置文件</li>
+<li>配置文件,⼤大量量的 Servlet 专属的 server.<em> 被移到了了 server.servlet.</em> 下</li>
+<li>WebMvcConfigurerAdapter 过期</li>
+<li>Spring Boot JPA 变化,掉了了 xxxOne() 方法,delete() 方法和 findOne() 类似也被去掉了，可以使用 deleteById(Long id) 来替换，还有一个不同点是deleteById(Long id) 默认实现返回值为 void</li>
+<li>需要指定主键的自增策略</li>
+<li>分页组件 PageRequest 变化在</li>
+<li>JPA 关联查询</li>
 </ul>
 
         </div>
@@ -259,7 +269,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-10T00:01:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-10T19:40:09+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>最后更新于 2020年9月10日</p>
@@ -283,6 +293,25 @@
         
         
             <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2020/09/10/J_SpringBoot2.0依赖环境和项目结构/" rel="prev" title="Spring Boot 2.0 依赖环境和项目结构介绍">
+                                  
+                                      Spring Boot 2.0 依赖环境和项目结构介绍
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/SpringBoot/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>SpringBoot</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
                 
                     <section class="next">
@@ -405,13 +434,15 @@
         
           <li><a class="flat-box" title="/categories/2019年5月/" href="/categories/2019年5月/"><div class="name">2019年5月</div><div class="badge">(4)</div></a></li>
         
+          <li><a class="flat-box" title="/categories/2020年10月/" href="/categories/2020年10月/"><div class="name">2020年10月</div><div class="badge">(2)</div></a></li>
+        
           <li><a class="flat-box" title="/categories/2020年3月/" href="/categories/2020年3月/"><div class="name">2020年3月</div><div class="badge">(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/2020年4月/" href="/categories/2020年4月/"><div class="name">2020年4月</div><div class="badge">(1)</div></a></li>
         
           <li><a class="flat-box" title="/categories/2020年6月/" href="/categories/2020年6月/"><div class="name">2020年6月</div><div class="badge">(3)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/2020年9月/" href="/categories/2020年9月/"><div class="name">2020年9月</div><div class="badge">(2)</div></a></li>
+          <li><a class="flat-box" title="/categories/2020年9月/" href="/categories/2020年9月/"><div class="name">2020年9月</div><div class="badge">(3)</div></a></li>
         
       </ul>
     </div>
@@ -436,7 +467,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/Android/" style="font-size: 14px; color: #999">Android</a> <a href="/tags/Demo/" style="font-size: 14px; color: #999">Demo</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/SpringBoot/" style="font-size: 20.67px; color: #6c6c6c">SpringBoot</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/前端/" style="font-size: 17.33px; color: #828282">前端</a> <a href="/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/软件/" style="font-size: 14px; color: #999">软件</a>
+      <a href="/tags/Android/" style="font-size: 14px; color: #999">Android</a> <a href="/tags/Demo/" style="font-size: 14px; color: #999">Demo</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/SpringBoot/" style="font-size: 20.67px; color: #6c6c6c">SpringBoot</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/前端/" style="font-size: 17.33px; color: #828282">前端</a> <a href="/tags/工具/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/测试/" style="font-size: 14px; color: #999">测试</a> <a href="/tags/游戏/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/软件/" style="font-size: 14px; color: #999">软件</a>
     </div>
   </section>
 
@@ -456,7 +487,7 @@
 </header>
 
     <div class="content pure">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\09\07\J_SpringBoot简介\" title="Spring Boot 产生的背景和它的设计理理念" rel="bookmark">Spring Boot 产生的背景和它的设计理理念</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\29\J_SpringBoot的HelloWorld\" title="Eclipse搭建SpringBoot之HelloWorld(转载)" rel="bookmark">Eclipse搭建SpringBoot之HelloWorld(转载)</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\28\J_SpringBootProblem001\" title="Spring Boot 问题集001" rel="bookmark">Spring Boot 问题集001</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\09\10\J_SpringBoot2.0依赖环境和项目结构\" title="Spring Boot 2.0 依赖环境和项目结构介绍" rel="bookmark">Spring Boot 2.0 依赖环境和项目结构介绍</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\28\J_SpringBootProblem001\" title="Spring Boot 问题集001" rel="bookmark">Spring Boot 问题集001</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\10\29\J_SpringBoot的HelloWorld\" title="Eclipse搭建SpringBoot之HelloWorld(转载)" rel="bookmark">Eclipse搭建SpringBoot之HelloWorld(转载)</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\09\07\J_SpringBoot简介\" title="Spring Boot 产生的背景和它的设计理理念" rel="bookmark">Spring Boot 产生的背景和它的设计理理念</a></h3></div></li></ul>
     </div>
   </section>
 
